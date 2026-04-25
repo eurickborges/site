@@ -20,7 +20,6 @@
     <noscript><img height="1" width="1" style="display:none"
     src="https://www.facebook.com/tr?id=831647356068561&ev=PageView&noscript=1"
     /></noscript>
-    
     <link rel="icon" type="image/png" href="icon.png">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&display=swap" rel="stylesheet">
 
@@ -46,7 +45,6 @@
             overflow-x: hidden;
         }
 
-        /* --- SISTEMA DE PARTÍCULAS --- */
         #particle-container {
             position: fixed;
             top: 0; left: 0;
@@ -70,7 +68,6 @@
             100% { transform: translateY(-10vh) translateX(20px); opacity: 0; }
         }
 
-        /* --- BOTÃO FLUTUANTE WPP --- */
         .wpp-floating {
             position: fixed;
             bottom: 25px;
@@ -86,6 +83,8 @@
             z-index: 999;
             transition: var(--transition);
             animation: pulse-wpp 2s infinite;
+            cursor: pointer;
+            border: none;
         }
 
         .wpp-floating:hover { transform: scale(1.1); }
@@ -97,7 +96,6 @@
             100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
         }
 
-        /* --- LAYOUT --- */
         .banner {
             position: relative; 
             height: 45vh;
@@ -109,21 +107,6 @@
             justify-content: center;
             border-bottom: 2px solid var(--accent-color);
         }
-
-        .banner-cta {
-            margin-top: 20px;
-            padding: 10px 25px;
-            border: 1px solid var(--accent-color);
-            color: #fff;
-            text-decoration: none;
-            text-transform: uppercase;
-            font-size: 0.8rem;
-            letter-spacing: 2px;
-            transition: var(--transition);
-            background: rgba(230, 0, 0, 0.1);
-        }
-
-        .banner-cta:hover { background: var(--accent-color); }
 
         .services-section { padding: 60px 15px; }
         .section-title { text-align: center; text-transform: uppercase; letter-spacing: 3px; margin-bottom: 40px; font-size: 1.8rem; }
@@ -170,21 +153,24 @@
 
         .price-highlight { color: var(--accent-color); }
 
-        .about-section { padding: 80px 15px; background-color: #0d0d0d; border-top: 1px solid #222; }
-        .about-container { max-width: 900px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1.5fr; gap: 40px; align-items: center; }
-        .about-img { width: 100%; border-radius: var(--border-radius); border: 1px solid var(--accent-color); }
-        .about-text h2 { font-size: 2rem; margin-top: 0; color: var(--accent-color); }
-        .about-text p { color: var(--secondary-text-color); margin-bottom: 20px; }
-
         .btn-whatsapp {
             background-color: var(--whatsapp-color); 
             color: #fff; padding: 14px; border-radius: 30px;
             display: flex; align-items: center; justify-content: center;
             font-weight: 700; text-decoration: none; text-transform: uppercase;
             font-size: 0.85rem; transition: var(--transition);
+            cursor: pointer;
+            border: none;
+            width: 100%;
         }
 
         .btn-whatsapp:hover { filter: brightness(1.1); box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3); }
+
+        .about-section { padding: 80px 15px; background-color: #0d0d0d; border-top: 1px solid #222; }
+        .about-container { max-width: 900px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1.5fr; gap: 40px; align-items: center; }
+        .about-img { width: 100%; border-radius: var(--border-radius); border: 1px solid var(--accent-color); }
+        .about-text h2 { font-size: 2rem; margin-top: 0; color: var(--accent-color); }
+        .about-text p { color: var(--secondary-text-color); margin-bottom: 20px; }
 
         footer { text-align: center; padding: 40px; background: #000; color: #555; font-size: 0.8rem; }
 
@@ -198,16 +184,11 @@
 
     <div id="particle-container"></div>
 
-    <a href="https://wa.me/5533998544308?text=Olá Rick, vim pelo site e quero elevar meu visual!" 
-       class="wpp-floating" 
-       target="_blank" 
-       onclick="trackWpp();">
+    <div class="wpp-floating" onclick="trackWpp('Olá Rick, vim pelo site e quero elevar meu visual!');">
         <svg viewBox="0 0 32 32"><path d="M16 0c-8.837 0-16 7.163-16 16 0 2.825 0.733 5.476 2.017 7.783l-2.017 7.351 7.522-1.972c2.253 1.229 4.843 1.929 7.604 1.929 8.837 0 16-7.163 16-16s-7.163-16-16-16zM24.062 22.045c-0.344 0.966-1.701 1.764-2.322 1.887-0.621 0.123-1.242 0.246-2.103-0.062-0.862-0.308-4.103-1.579-6.93-4.103-2.827-2.524-4.244-4.821-4.244-6.302 0-1.482 0.758-2.206 1.034-2.481s0.621-0.344 0.827-0.344c0.207 0 0.414 0 0.586 0.010 0.183 0.010 0.424-0.069 0.665 0.506 0.241 0.586 0.827 2.013 0.896 2.151s0.115 0.3 0.023 0.483c-0.092 0.183-0.138 0.3-0.276 0.46s-0.287 0.368-0.414 0.506c-0.126 0.138-0.264 0.287-0.115 0.54s0.665 1.092 1.425 1.77c0.977 0.874 1.793 1.149 2.058 1.287 0.264 0.138 0.414 0.115 0.575-0.069s0.69-0.805 0.874-1.08c0.183-0.276 0.368-0.23 0.621-0.138 0.253 0.092 1.609 0.758 1.885 0.896s0.46 0.207 0.529 0.322c0.069 0.115 0.069 0.667-0.276 1.632z"></path></svg>
-    </a>
+    </div>
 
-    <header class="banner">
-        
-    </header>
+    <header class="banner"></header>
 
     <main class="services-section" id="servicos">
         <h2 class="section-title">Soluções Visuais</h2>
@@ -217,25 +198,25 @@
                 <h3>Videoclipes</h3>
                 <p>Cenas de alto impacto com estética de cinema. Transformo sua música em uma experiência visual memorável.</p>
                 <div class="service-price">Investimento: <span class="price-highlight">R$ 297,00</span></div>
-                <a href="https://wa.me/5533998544308?text=Olá, quero um orçamento para Videoclipe" 
-                   class="btn-whatsapp" onclick="trackWpp();" target="_blank">Contratar via WhatsApp</a>
+                <button onclick="trackWpp('Olá, quero um orçamento para Videoclipe')" class="btn-whatsapp">Contratar via WhatsApp</button>
             </div>
+            
             <div class="service-card">
                 <img src="img3.png" alt="Visualizers">
                 <h3>Visualizers</h3>
                 <p>Vídeos dinâmicos para YouTube e Reels que mantêm o seu público vidrado na sua música.</p>
                 <div class="service-price">Investimento: <span class="price-highlight">R$ 45,00</span></div>
-                <a href="https://wa.me/5533998544308?text=Olá, quero um orçamento para Visualizer" 
-                   class="btn-whatsapp" onclick="trackWpp();" target="_blank">Criar Visualizer</a>
+                <button onclick="trackWpp('Olá, quero um orçamento para Visualizer')" class="btn-whatsapp">Criar Visualizer</button>
             </div>
+
             <div class="service-card">
                 <img src="img2.png" alt="Artes">
                 <h3>Artes de Elite</h3>
                 <p>Capas e banners que se destacam no feed. Design profissional para quem não aceita o amadorismo.</p>
                 <div class="service-price">Investimento: <span class="price-highlight">R$ 15,00 /unid.</span></div>
-                <a href="https://wa.me/5533998544308?text=Olá, quero um orçamento para Artes" 
-                   class="btn-whatsapp" onclick="trackWpp();" target="_blank">Solicitar Arte</a>
+                <button onclick="trackWpp('Olá, quero um orçamento para Artes')" class="btn-whatsapp">Solicitar Arte</button>
             </div>
+
             <div class="service-card">
                 <img src="img4.png" alt="Ensaios">
                 <h3>Ensaios com IA</h3>
@@ -243,8 +224,7 @@
                 <div class="service-price">
                     6 fotos: <span class="price-highlight">R$ 30</span> | 15 fotos: <span class="price-highlight">R$ 49</span>
                 </div>
-                <a href="https://wa.me/5533998544308?text=Olá, quero um orçamento para Ensaio IA" 
-                   class="btn-whatsapp" onclick="trackWpp();" target="_blank">Fazer Ensaio</a>
+                <button onclick="trackWpp('Olá, quero um orçamento para Ensaio IA')" class="btn-whatsapp">Fazer Ensaio</button>
             </div>
         </div>
     </main>
@@ -266,6 +246,7 @@
     </footer>
 
     <script>
+        // Partículas
         function createParticles() {
             const container = document.getElementById('particle-container');
             if (!container) return;
@@ -283,10 +264,21 @@
         }
         createParticles();
 
-        function trackWpp() {
+        // FUNÇÃO DE RASTREIO BLINDADA
+        function trackWpp(mensagem) {
+            const numero = "5533998544308";
+            const url = "https://wa.me/" + numero + "?text=" + encodeURIComponent(mensagem);
+
+            // 1. Dispara o Pixel
             if (typeof fbq !== 'undefined') {
-                fbq('track', 'Contact'); 
+                fbq('track', 'Contact');
+                console.log("Pixel Contact enviado com sucesso!");
             }
+
+            // 2. Pequeno delay para garantir o envio antes de sair da página
+            setTimeout(function() {
+                window.open(url, '_blank');
+            }, 400); 
         }
     </script>
 </body>
