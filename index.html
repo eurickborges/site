@@ -137,21 +137,7 @@
 
         .service-card img { width: 100%; aspect-ratio: 9 / 16; object-fit: cover; border-radius: 8px; margin-bottom: 15px; }
         .service-card h3 { font-size: 1.3rem; margin: 10px 0; border-left: 3px solid var(--accent-color); padding-left: 10px; }
-        .service-card p { font-size: 0.9rem; color: var(--secondary-text-color); margin-bottom: 15px; flex-grow: 1; }
-
-        .service-price {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid #333;
-            color: var(--primary-text-color);
-            padding: 8px;
-            border-radius: 8px;
-            text-align: center;
-            margin-bottom: 20px;
-            font-weight: 800;
-            font-size: 1.1rem;
-        }
-
-        .price-highlight { color: var(--accent-color); }
+        .service-card p { font-size: 0.9rem; color: var(--secondary-text-color); margin-bottom: 25px; flex-grow: 1; }
 
         .btn-whatsapp {
             background-color: var(--whatsapp-color); 
@@ -197,23 +183,20 @@
                 <img src="img1.png" alt="Videoclipes">
                 <h3>Videoclipes</h3>
                 <p>Cenas de alto impacto com estética de cinema. Transformo sua música em uma experiência visual memorável.</p>
-                <div class="service-price">Investimento: <span class="price-highlight">R$ 297,00</span></div>
-                <button onclick="trackWpp('Olá, quero um orçamento para Videoclipe')" class="btn-whatsapp">Contratar via WhatsApp</button>
+                <button onclick="trackWpp('Olá, quero um orçamento para Videoclipe')" class="btn-whatsapp">Orçamento via WhatsApp</button>
             </div>
             
             <div class="service-card">
                 <img src="img3.png" alt="Visualizers">
                 <h3>Visualizers</h3>
                 <p>Vídeos dinâmicos para YouTube e Reels que mantêm o seu público vidrado na sua música.</p>
-                <div class="service-price">Investimento: <span class="price-highlight">R$ 45,00</span></div>
-                <button onclick="trackWpp('Olá, quero um orçamento para Visualizer')" class="btn-whatsapp">Criar Visualizer</button>
+                <button onclick="trackWpp('Olá, quero um orçamento para Visualizer')" class="btn-whatsapp">Solicitar Visualizer</button>
             </div>
 
             <div class="service-card">
                 <img src="img2.png" alt="Artes">
                 <h3>Artes de Elite</h3>
                 <p>Capas e banners que se destacam no feed. Design profissional para quem não aceita o amadorismo.</p>
-                <div class="service-price">Investimento: <span class="price-highlight">R$ 15,00 /unid.</span></div>
                 <button onclick="trackWpp('Olá, quero um orçamento para Artes')" class="btn-whatsapp">Solicitar Arte</button>
             </div>
 
@@ -221,9 +204,6 @@
                 <img src="img4.png" alt="Ensaios">
                 <h3>Ensaios com IA</h3>
                 <p>Sua imagem em cenários épicos impossíveis de fotografar no mundo real.</p>
-                <div class="service-price">
-                    6 fotos: <span class="price-highlight">R$ 30</span> | 15 fotos: <span class="price-highlight">R$ 49</span>
-                </div>
                 <button onclick="trackWpp('Olá, quero um orçamento para Ensaio IA')" class="btn-whatsapp">Fazer Ensaio</button>
             </div>
         </div>
@@ -264,18 +244,17 @@
         }
         createParticles();
 
-        // FUNÇÃO DE RASTREIO BLINDADA
+        // FUNÇÃO DE RASTREIO ATUALIZADA PARA LEAD
         function trackWpp(mensagem) {
             const numero = "5533998544308";
             const url = "https://wa.me/" + numero + "?text=" + encodeURIComponent(mensagem);
 
-            // 1. Dispara o Pixel
             if (typeof fbq !== 'undefined') {
-                fbq('track', 'Contact');
-                console.log("Pixel Contact enviado com sucesso!");
+                // Evento alterado para Lead conforme solicitado
+                fbq('track', 'Lead');
+                console.log("Evento Lead enviado para o Meta Pixel!");
             }
 
-            // 2. Pequeno delay para garantir o envio antes de sair da página
             setTimeout(function() {
                 window.open(url, '_blank');
             }, 400); 
