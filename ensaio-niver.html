@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ensaio de Aniversário IA - Rick Borges</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&display=swap" rel="stylesheet">
+    
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '831647356068561');
+    fbq('track', 'PageView');
+    </script>
+
+    <style>
+        .landing-container {
+            text-align: center;
+            padding: 40px 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .image-showcase {
+            margin: 0 auto 30px;
+            max-width: 450px;
+        }
+
+        .image-showcase img {
+            width: 100%;
+            border-radius: 12px;
+            border: 1px solid #333;
+            box-shadow: 0 0 30px rgba(230,0,0,0.15);
+        }
+
+        .highlight-tag {
+            display: inline-block;
+            background: #e6ce00;
+            color: black;
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 0.7rem;
+            font-weight: 800;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        .content-box {
+            text-align: left;
+            background: var(--surface-color);
+            padding: 25px;
+            border-radius: 12px;
+            border-left: 4px solid #e6ce00;
+        }
+
+        .pack-badge {
+            background: rgba(37, 211, 102, 0.1);
+            border: 1px solid var(--whatsapp-color);
+            color: var(--whatsapp-color);
+            padding: 10px;
+            border-radius: 8px;
+            font-weight: 700;
+            display: inline-block;
+            margin-bottom: 20px;
+            font-size: 0.9rem;
+        }
+
+        .delivery-notice {
+            background: rgba(230, 206, 0, 0.1);
+            border: 1px dashed #e6ce00;
+            color: #e6ce00;
+            padding: 10px;
+            border-radius: 8px;
+            margin-top: 15px;
+            font-weight: 700;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+        }
+
+        .free-test-box {
+            margin-top: 30px;
+            background: linear-gradient(145deg, #1a1a1a, #000);
+            padding: 20px;
+            border-radius: 12px;
+            border: 1px solid #e6ce00;
+            text-align: center;
+        }
+
+        .free-test-box h4 {
+            color: #e6ce00;
+            margin-top: 0;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+        }
+
+        .btn-cta-wpp {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 20px;
+            font-size: 1.1rem;
+            margin-top: 20px;
+            width: 100%;
+            max-width: 450px;
+            background-color: #e6ce00;
+            color: black;
+            border: none;
+            cursor: pointer;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            text-transform: uppercase;
+            border-radius: 8px;
+            text-decoration: none;
+            margin-left: auto;
+            margin-right: auto;
+            transition: transform 0.2s;
+        }
+
+        .btn-cta-wpp:hover {
+            transform: scale(1.02);
+        }
+
+        .btn-cta-wpp svg {
+            width: 24px;
+            fill: black;
+        }
+
+        /* Botão Flutuante WhatsApp */
+        .wpp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25d366;
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            box-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: transform 0.3s;
+        }
+
+        .wpp-float:hover {
+            transform: scale(1.1);
+        }
+
+        .wpp-float svg {
+            width: 35px;
+            height: 35px;
+            fill: white;
+        }
+
+        @media (max-width: 768px) {
+            .image-showcase { max-width: 320px; }
+            .landing-container { padding: 20px 15px; }
+            .btn-cta-wpp { font-size: 0.9rem; }
+            .wpp-float { width: 50px; height: 50px; bottom: 15px; right: 15px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="particle-container"></div>
+
+    <nav>
+        <a href="index.html">← Voltar para Home</a>
+        <a href="videoclipes.html">Videoclipes</a>
+        <a href="visualizers.html">Visualizers</a>
+        <a href="artes-elite.html">Artes</a>
+        <a href="ensaios-ia.html">Ensaios IA</a>
+    </nav>
+
+    <a href="javascript:void(0)" onclick="trackWpp('Olá Rick, vim pelo botão flutuante e quero saber mais sobre o ensaio de aniversário!')" class="wpp-float">
+        <svg viewBox="0 0 32 32"><path d="M16 0c-8.837 0-16 7.163-16 16 0 2.825 0.733 5.476 2.017 7.783l-2.017 7.351 7.522-1.972c2.253 1.229 4.843 1.929 7.604 1.929 8.837 0 16-7.163 16-16s-7.163-16-16-16zM24.062 22.045c-0.344 0.966-1.701 1.764-2.322 1.887-0.621 0.123-1.242 0.246-2.103-0.062-0.862-0.308-4.103-1.579-6.93-4.103-2.827-2.524-4.244-4.821-4.244-6.302 0-1.482 0.758-2.206 1.034-2.481s0.621-0.344 0.827-0.344c0.207 0 0.414 0 0.586 0.010 0.183 0.010 0.424-0.069 0.665 0.506 0.241 0.586 0.827 2.013 0.896 2.151s0.115 0.3 0.023 0.483c-0.092 0.183-0.138 0.3-0.276 0.46s-0.287 0.368-0.414 0.506c-0.126 0.138-0.264 0.287-0.115 0.54s0.665 1.092 1.425 1.77c0.977 0.874 1.793 1.149 2.058 1.287 0.264 0.138 0.414 0.115 0.575-0.069s0.69-0.805 0.874-1.08c0.183-0.276 0.368-0.23 0.621-0.138 0.253 0.092 1.609 0.758 1.885 0.896s0.46 0.207 0.529 0.322c0.069 0.115 0.069 0.667-0.276 1.632z"></path></svg>
+    </a>
+
+    <main class="landing-container">
+        
+        <span class="highlight-tag">Especial Aniversário</span>
+        <h1 style="color: #e6ce00; font-size: 2.5rem; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 10px;">Ensaio de Aniversário IA</h1>
+        <p style="color: var(--secondary-text-color); font-size: 1rem; margin-bottom: 30px;">Comemore seu novo ciclo com fotos de alto padrão e tratamento artístico.</p>
+
+        <div class="image-showcase">
+            <img src="img5.png" alt="Exemplo Ensaio Aniversário IA">
+        </div>
+
+        <div class="content-box">
+            <h3 style="margin-top: 0; font-size: 1.1rem; text-transform: uppercase;">Celebre com Estilo e Exclusividade</h3>
+            
+            <p style="color: var(--secondary-text-color); font-size: 0.95rem; line-height: 1.6; margin-bottom: 15px;">
+                Quer fotos incríveis de aniversário para postar? Com <strong>apenas 1 foto sua</strong>, criamos um ensaio temático impecável com <strong>pós-tratamento manual no Photoshop</strong> para um resultado profissional.
+            </p>
+
+            <div class="pack-badge">
+                PACOTE ANIVERSÁRIO: 15 FOTOS COM EDIÇÃO PROFISSIONAL
+            </div>
+
+            <ul style="color: var(--secondary-text-color); padding-left: 20px; font-size: 0.85rem; line-height: 1.8;">
+                <li><strong>Cenários de Festa:</strong> Ambientes luxuosos, balões e bolos.</li>
+                <li><strong>Toque Humano:</strong> Pós-tratamento manual para garantir realismo.</li>
+                <li><strong>Visual Profissional:</strong> Ideal para atualizar suas redes sociais.</li>
+            </ul>
+
+            <div class="delivery-notice">
+                ⚡ Entrega de 1 a 2 dias úteis (após confirmação do pagamento)
+            </div>
+        </div>
+
+        <div class="free-test-box">
+            <h4>🛡️ Compra 100% Segura</h4>
+            <p style="color: #fff; font-size: 0.95rem; margin-bottom: 8px;"><strong>Tire a prova agora:</strong></p>
+            <p style="color: var(--secondary-text-color); font-size: 0.9rem; margin-top: 0; line-height: 1.5;">
+                Envie uma foto no WhatsApp e eu te mando uma <strong>prévia gratuita</strong>. Veja com seus próprios olhos o resultado antes de fechar o pacote.
+            </p>
+        </div>
+
+        <div style="margin-top: 40px; background: rgba(255,255,255,0.03); padding: 30px; border-radius: 12px; border: 1px solid #222;">
+            <p style="text-transform: uppercase; letter-spacing: 1px; font-size: 0.8rem; color: var(--secondary-text-color); margin-bottom: 5px;">Investimento no Pacote</p>
+            <div style="font-size: 3rem; font-weight: 800; color: #fff; margin-bottom: 5px;">
+                <span style="font-size: 1.2rem; vertical-align: top; margin-right: 5px;">R$</span>35
+            </div>
+            <p style="color: var(--whatsapp-color); font-weight: 700; font-size: 0.9rem; margin-top: 0;">O PRESENTE PERFEITO PARA SUA IMAGEM</p>
+            
+            <button onclick="trackWpp('Olá Rick, quero transformar minha foto agora! Vou enviar uma imagem para ver o exemplo do ensaio de aniversário.')" class="btn-cta-wpp">
+                <svg viewBox="0 0 32 32"><path d="M16 0c-8.837 0-16 7.163-16 16 0 2.825 0.733 5.476 2.017 7.783l-2.017 7.351 7.522-1.972c2.253 1.229 4.843 1.929 7.604 1.929 8.837 0 16-7.163 16-16s-7.163-16-16-16zM24.062 22.045c-0.344 0.966-1.701 1.764-2.322 1.887-0.621 0.123-1.242 0.246-2.103-0.062-0.862-0.308-4.103-1.579-6.93-4.103-2.827-2.524-4.244-4.821-4.244-6.302 0-1.482 0.758-2.206 1.034-2.481s0.621-0.344 0.827-0.344c0.207 0 0.414 0 0.586 0.010 0.183 0.010 0.424-0.069 0.665 0.506 0.241 0.586 0.827 2.013 0.896 2.151s0.115 0.3 0.023 0.483c-0.092 0.183-0.138 0.3-0.276 0.46s-0.287 0.368-0.414 0.506c-0.126 0.138-0.264 0.287-0.115 0.54s0.665 1.092 1.425 1.77c0.977 0.874 1.793 1.149 2.058 1.287 0.264 0.138 0.414 0.115 0.575-0.069s0.69-0.805 0.874-1.08c0.183-0.276 0.368-0.23 0.621-0.138 0.253 0.092 1.609 0.758 1.885 0.896s0.46 0.207 0.529 0.322c0.069 0.115 0.069 0.667-0.276 1.632z"></path></svg>
+                TRANSFORMAR MINHA FOTO AGORA
+            </button>
+            <p style="color: #666; font-size: 0.75rem; margin-top: 10px;">Fale conosco e garanta seu ensaio.</p>
+        </div>
+
+    </main>
+
+    <footer style="margin-top: 40px; text-align: center; color: #555; font-size: 0.8rem;">
+        <p>&copy; 2026 Rick Borges - Visual Studio.</p>
+    </footer>
+
+    <script>
+        function trackWpp(mensagem) {
+            const numero = "5533998544308";
+            const url = "https://wa.me/" + numero + "?text=" + encodeURIComponent(mensagem);
+            
+            if (typeof fbq !== 'undefined') {
+                fbq('track', 'Lead');
+            }
+            
+            setTimeout(function() { 
+                window.open(url, '_blank'); 
+            }, 400); 
+        }
+
+        function createParticles() {
+            const container = document.getElementById('particle-container');
+            if (!container) return;
+            for (let i = 0; i < 15; i++) {
+                const p = document.createElement('div');
+                p.className = 'particle';
+                const size = Math.random() * 3 + 2 + 'px';
+                p.style.width = size; p.style.height = size;
+                p.style.left = Math.random() * 100 + 'vw';
+                p.style.setProperty('--duration', Math.random() * 8 + 4 + 's');
+                container.appendChild(p);
+            }
+        }
+        createParticles();
+    </script>
+</body>
+</html>

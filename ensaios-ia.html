@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ensaios Fotográficos com IA - Rick Borges</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&display=swap" rel="stylesheet">
+    
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '831647356068561');
+    fbq('track', 'PageView');
+    </script>
+
+    <style>
+        .landing-container {
+            text-align: center;
+            padding: 40px 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .image-showcase {
+            margin: 0 auto 30px;
+            max-width: 450px;
+        }
+
+        .image-showcase img {
+            width: 100%;
+            border-radius: 12px;
+            border: 1px solid #333;
+            box-shadow: 0 0 30px rgba(230,0,0,0.15);
+        }
+
+        .highlight-tag {
+            display: inline-block;
+            background: var(--accent-color);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 0.7rem;
+            font-weight: 800;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        .content-box {
+            text-align: left;
+            background: var(--surface-color);
+            padding: 25px;
+            border-radius: 12px;
+            border-left: 4px solid var(--accent-color);
+        }
+
+        .pack-badge {
+            background: rgba(37, 211, 102, 0.1);
+            border: 1px solid var(--whatsapp-color);
+            color: var(--whatsapp-color);
+            padding: 10px;
+            border-radius: 8px;
+            font-weight: 700;
+            display: inline-block;
+            margin-bottom: 20px;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .image-showcase { max-width: 320px; }
+            .landing-container { padding: 20px 15px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="particle-container"></div>
+
+    <nav>
+        <a href="index.html">← Voltar para Home</a>
+        <a href="videoclipes.html">Videoclipes</a>
+        <a href="visualizers.html">Visualizers</a>
+        <a href="artes-elite.html">Artes</a>
+    </nav>
+
+    <main class="landing-container">
+        
+        <span class="highlight-tag">IA Generativa de Alta Performance</span>
+        <h1 style="color: var(--accent-color); font-size: 2.5rem; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 10px;">Ensaios com IA</h1>
+        <p style="color: var(--secondary-text-color); font-size: 1rem; margin-bottom: 30px;">Atualize seu perfil com estética profissional e alta qualidade.</p>
+
+        <div class="image-showcase">
+            <img src="img4.png" alt="Exemplo de Ensaio com IA">
+        </div>
+
+        <div class="content-box">
+            <h3 style="margin-top: 0; font-size: 1.1rem; text-transform: uppercase;">Posicionamento de Elite</h3>
+            
+            <p style="color: var(--secondary-text-color); font-size: 0.95rem; line-height: 1.6; margin-bottom: 15px;">
+                Com apenas <strong>1 foto de referência</strong>, nossa IA cria fotos de <strong>Studio ou Rua</strong> para você manter suas redes sociais com um visual profissional e atraente.
+            </p>
+
+            <div class="pack-badge">
+                PACOTE: 15 FOTOS DE ALTA QUALIDADE
+            </div>
+
+            <ul style="color: var(--secondary-text-color); padding-left: 20px; font-size: 0.85rem; line-height: 1.8;">
+                <li><strong>Estética de Studio ou Rua:</strong> Você escolhe o clima do seu ensaio.</li>
+                <li><strong>Atualize seu Perfil:</strong> Ideal para Instagram, Spotify e Divulgação.</li>
+                <li><strong>Alta Resolução:</strong> Nitidez máxima e cores profissionais.</li>
+                <li><strong>Cenários Épicos:</strong> Do minimalismo do estúdio ao lifestyle urbano.</li>
+                <li><strong>Consistência:</strong> Sua identidade artística preservada em cada foto.</li>
+            </ul>
+        </div>
+
+        <div style="margin-top: 40px; background: rgba(255,255,255,0.03); padding: 30px; border-radius: 12px; border: 1px solid #222;">
+            <p style="text-transform: uppercase; letter-spacing: 1px; font-size: 0.8rem; color: var(--secondary-text-color); margin-bottom: 5px;">Investimento no Pacote</p>
+            <div style="font-size: 3rem; font-weight: 800; color: #fff; margin-bottom: 5px;">
+                <span style="font-size: 1.2rem; vertical-align: top; margin-right: 5px;">R$</span>30
+            </div>
+            <p style="color: var(--whatsapp-color); font-weight: 700; font-size: 0.9rem; margin-top: 0;">MANTENHA SUAS REDES EM ALTO NÍVEL</p>
+            
+            <button onclick="trackWpp('Olá Rick, quero o pacote de 15 fotos do Ensaio IA por R$ 30!')" class="btn-whatsapp" style="padding: 18px; font-size: 1rem; margin-top: 20px; width: 100%; max-width: 400px;">
+                GARANTIR MEU ENSAIO PROFISSIONAL
+            </button>
+            <p style="font-size: 0.7rem; color: #666; margin-top: 15px;">Transforme sua presença digital agora.</p>
+        </div>
+
+    </main>
+
+    <footer style="margin-top: 40px; text-align: center; color: #555; font-size: 0.8rem;">
+        <p>&copy; 2026 Rick Borges - Visual Studio.</p>
+    </footer>
+
+    <script>
+        function trackWpp(mensagem) {
+            const numero = "5533998544308";
+            const url = "https://wa.me/" + numero + "?text=" + encodeURIComponent(mensagem);
+            if (typeof fbq !== 'undefined') {
+                fbq('track', 'Lead');
+            }
+            setTimeout(function() { window.open(url, '_blank'); }, 400); 
+        }
+
+        function createParticles() {
+            const container = document.getElementById('particle-container');
+            if (!container) return;
+            for (let i = 0; i < 15; i++) {
+                const p = document.createElement('div');
+                p.className = 'particle';
+                const size = Math.random() * 3 + 2 + 'px';
+                p.style.width = size; p.style.height = size;
+                p.style.left = Math.random() * 100 + 'vw';
+                p.style.setProperty('--duration', Math.random() * 8 + 4 + 's');
+                container.appendChild(p);
+            }
+        }
+        createParticles();
+    </script>
+</body>
+</html>

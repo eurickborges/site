@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Videoclipes de Elite - Rick Borges</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&display=swap" rel="stylesheet">
+    
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '831647356068561');
+    fbq('track', 'PageView');
+    </script>
+</head>
+<body>
+
+    <div id="particle-container"></div>
+
+    <nav>
+        <a href="index.html">← Voltar para Home</a>
+        <a href="visualizers.html">Visualizers</a>
+        <a href="artes-elite.html">Artes</a>
+        <a href="ensaios-ia.html">Ensaios IA</a>
+    </nav>
+
+    <div class="landing-container" style="text-align: center; padding: 40px 20px; max-width: 800px; margin: 0 auto;">
+        
+        <h1 style="color: var(--accent-color); font-size: 2.5rem; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 10px;">Videoclipes</h1>
+        <p style="color: var(--secondary-text-color); font-size: 1rem; margin-bottom: 30px;">Estética de Cinema com Tecnologia de Ponta</p>
+
+        <div style="margin: 0 auto 30px; max-width: 450px;">
+            <img src="img1.png" alt="Videoclipes Rick Borges" style="width: 100%; border-radius: 12px; border: 1px solid #333; box-shadow: 0 0 20px rgba(230,0,0,0.15);">
+        </div>
+
+        <div class="content-text" style="text-align: left; background: var(--surface-color); padding: 25px; border-radius: 12px; border-left: 4px solid var(--accent-color);">
+            <h3 style="margin-top: 0; font-size: 1.1rem; text-transform: uppercase;">POR QUE INVESTIR EM UM CLIPE DE ELITE?</h3>
+            
+            <p style="background: rgba(230, 0, 0, 0.1); padding: 15px; border-radius: 8px; border: 1px dashed var(--accent-color); font-size: 0.95rem; margin-bottom: 20px;">
+                <strong>DIFERENCIAL ÚNICO:</strong> Com apenas <strong>1 foto sua</strong>, criamos um clipe completo em qualquer cenário imaginável, com movimentos de câmera e visual de cinema.
+            </p>
+
+            <ul style="color: var(--secondary-text-color); padding-left: 20px; font-size: 0.9rem; line-height: 1.8;">
+                <li><strong>Direção Criativa:</strong> Roteiro focado na sua identidade artística.</li>
+                <li><strong>Color Grading:</strong> Tratamento de cor de alto nível.</li>
+                <li><strong>Edição Dinâmica:</strong> Ritmo perfeito para YouTube e Reels.</li>
+                <li><strong>Entrega Rápida:</strong> Qualidade profissional sem espera infinita.</li>
+            </ul>
+        </div>
+
+        <div style="margin-top: 40px; background: rgba(255,255,255,0.03); padding: 30px; border-radius: 12px; border: 1px solid #222;">
+            <p style="text-transform: uppercase; letter-spacing: 1px; font-size: 0.8rem; color: var(--secondary-text-color); margin-bottom: 5px;">Investimento para o seu lançamento</p>
+            <div style="font-size: 3rem; font-weight: 800; color: #fff; margin-bottom: 5px;">
+                <span style="font-size: 1.2rem; vertical-align: top; margin-right: 5px;">R$</span>297
+            </div>
+            <p style="color: var(--whatsapp-color); font-weight: 700; font-size: 0.9rem; margin-top: 0;">PREÇO PROMOCIONAL POR TEMPO LIMITADO</p>
+            
+            <button onclick="trackWpp('Olá Rick, vi que o clipe custa 297 e quero garantir minha vaga!')" class="btn-whatsapp" style="padding: 18px; font-size: 1rem; margin-top: 20px;">
+                RESERVAR MEU CLIPE AGORA
+            </button>
+            <p style="font-size: 0.7rem; color: #666; margin-top: 15px;">Atendimento exclusivo no WhatsApp.</p>
+        </div>
+
+    </div>
+
+    <footer style="margin-top: 40px;"><p>&copy; 2026 Rick Borges - Visual Studio.</p></footer>
+
+    <script>
+        function trackWpp(mensagem) {
+            const numero = "5533998544308";
+            const url = "https://wa.me/" + numero + "?text=" + encodeURIComponent(mensagem);
+            if (typeof fbq !== 'undefined') {
+                fbq('track', 'Lead');
+            }
+            setTimeout(function() { window.open(url, '_blank'); }, 400); 
+        }
+
+        function createParticles() {
+            const container = document.getElementById('particle-container');
+            if (!container) return;
+            for (let i = 0; i < 15; i++) {
+                const p = document.createElement('div');
+                p.className = 'particle';
+                const size = Math.random() * 3 + 2 + 'px';
+                p.style.width = size; p.style.height = size;
+                p.style.left = Math.random() * 100 + 'vw';
+                p.style.setProperty('--duration', Math.random() * 8 + 4 + 's');
+                container.appendChild(p);
+            }
+        }
+        createParticles();
+    </script>
+</body>
+</html>
