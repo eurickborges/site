@@ -7,7 +7,8 @@
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&display=swap" rel="stylesheet">
     <link rel="icon" type="image/png" href="icon.png">
-<link rel="apple-touch-icon" href="icon.png">
+    <link rel="apple-touch-icon" href="icon.png">
+
     <script>
     !function(f,b,e,v,n,t,s)
     {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -17,10 +18,12 @@
     t.src=v;s=b.getElementsByTagName(e)[0];
     s.parentNode.insertBefore(t,s)}(window, document,'script',
     'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '831647356068561');
+    fbq('init', '1682652453049929'); // Seu novo ID inserido aqui
     fbq('track', 'PageView');
     </script>
-
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1682652453049929&ev=PageView&noscript=1"
+    /></noscript>
     <style>
         .landing-container {
             text-align: center;
@@ -125,16 +128,9 @@
             transition: transform 0.2s;
         }
 
-        .btn-cta-wpp:hover {
-            transform: scale(1.02);
-        }
+        .btn-cta-wpp:hover { transform: scale(1.02); }
+        .btn-cta-wpp svg { width: 24px; fill: black; }
 
-        .btn-cta-wpp svg {
-            width: 24px;
-            fill: black;
-        }
-
-        /* Botão Flutuante WhatsApp */
         .wpp-float {
             position: fixed;
             width: 60px;
@@ -154,15 +150,8 @@
             transition: transform 0.3s;
         }
 
-        .wpp-float:hover {
-            transform: scale(1.1);
-        }
-
-        .wpp-float svg {
-            width: 35px;
-            height: 35px;
-            fill: white;
-        }
+        .wpp-float:hover { transform: scale(1.1); }
+        .wpp-float svg { width: 35px; height: 35px; fill: white; }
 
         @media (max-width: 768px) {
             .image-showcase { max-width: 320px; }
@@ -189,7 +178,6 @@
     </a>
 
     <main class="landing-container">
-        
         <span class="highlight-tag">Especial Aniversário</span>
         <h1 style="color: #e6ce00; font-size: 2.5rem; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 10px;">Ensaio de Aniversário IA</h1>
         <p style="color: var(--secondary-text-color); font-size: 1rem; margin-bottom: 30px;">Comemore seu novo ciclo com fotos de alto padrão e tratamento artístico.</p>
@@ -200,24 +188,16 @@
 
         <div class="content-box">
             <h3 style="margin-top: 0; font-size: 1.1rem; text-transform: uppercase;">Celebre com Estilo e Exclusividade</h3>
-            
             <p style="color: var(--secondary-text-color); font-size: 0.95rem; line-height: 1.6; margin-bottom: 15px;">
                 Quer fotos incríveis de aniversário para postar? Com <strong>apenas 1 foto sua</strong>, criamos um ensaio temático impecável com <strong>pós-tratamento manual no Photoshop</strong> para um resultado profissional.
             </p>
-
-            <div class="pack-badge">
-                PACOTE ANIVERSÁRIO: 15 FOTOS COM EDIÇÃO PROFISSIONAL
-            </div>
-
+            <div class="pack-badge">PACOTE ANIVERSÁRIO: 15 FOTOS COM EDIÇÃO PROFISSIONAL</div>
             <ul style="color: var(--secondary-text-color); padding-left: 20px; font-size: 0.85rem; line-height: 1.8;">
                 <li><strong>Cenários de Festa:</strong> Ambientes luxuosos, balões e bolos.</li>
                 <li><strong>Toque Humano:</strong> Pós-tratamento manual para garantir realismo.</li>
                 <li><strong>Visual Profissional:</strong> Ideal para atualizar suas redes sociais.</li>
             </ul>
-
-            <div class="delivery-notice">
-                ⚡ Entrega de 1 a 2 dias úteis (após confirmação do pagamento)
-            </div>
+            <div class="delivery-notice">⚡ Entrega de 1 a 2 dias úteis (após confirmação do pagamento)</div>
         </div>
 
         <div class="free-test-box">
@@ -241,7 +221,6 @@
             </button>
             <p style="color: #666; font-size: 0.75rem; margin-top: 10px;">Fale conosco e garanta seu ensaio.</p>
         </div>
-
     </main>
 
     <footer style="margin-top: 40px; text-align: center; color: #555; font-size: 0.8rem;">
@@ -253,6 +232,7 @@
             const numero = "5533998544308";
             const url = "https://wa.me/" + numero + "?text=" + encodeURIComponent(mensagem);
             
+            // Disparo do evento de conversão Lead
             if (typeof fbq !== 'undefined') {
                 fbq('track', 'Lead');
             }
