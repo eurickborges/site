@@ -7,7 +7,8 @@
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&display=swap" rel="stylesheet">
     <link rel="icon" type="image/png" href="icon.png">
-<link rel="apple-touch-icon" href="icon.png">
+    <link rel="apple-touch-icon" href="icon.png">
+
     <script>
     !function(f,b,e,v,n,t,s)
     {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -17,12 +18,13 @@
     t.src=v;s=b.getElementsByTagName(e)[0];
     s.parentNode.insertBefore(t,s)}(window, document,'script',
     'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '831647356068561');
+    fbq('init', '746421058465729'); // Novo ID de Visualizer inserido aqui
     fbq('track', 'PageView');
     </script>
-
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=746421058465729&ev=PageView&noscript=1"
+    /></noscript>
     <style>
-        /* Estrutura Vertical Centralizada */
         .landing-container {
             text-align: center;
             padding: 40px 20px;
@@ -62,6 +64,25 @@
             border-left: 4px solid var(--accent-color);
         }
 
+        .btn-whatsapp {
+            padding: 18px;
+            font-size: 1rem;
+            margin-top: 20px;
+            width: 100%;
+            max-width: 400px;
+            font-weight: 800;
+            cursor: pointer;
+            border-radius: 8px;
+            border: none;
+            background-color: var(--whatsapp-color);
+            color: white;
+            font-family: 'Montserrat', sans-serif;
+            text-transform: uppercase;
+            transition: transform 0.2s;
+        }
+
+        .btn-whatsapp:hover { transform: scale(1.02); }
+
         @media (max-width: 768px) {
             .image-showcase { max-width: 300px; }
             .landing-container { padding: 20px 15px; }
@@ -80,7 +101,6 @@
     </nav>
 
     <main class="landing-container">
-        
         <span class="highlight-tag">Tecnologia de IA Aplicada</span>
         <h1 style="color: var(--accent-color); font-size: 2.5rem; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 10px;">Visualizers</h1>
         <p style="color: var(--secondary-text-color); font-size: 1rem; margin-bottom: 30px;">Sua música com impacto visual infinito.</p>
@@ -91,7 +111,6 @@
 
         <div class="content-box">
             <h3 style="margin-top: 0; font-size: 1.1rem; text-transform: uppercase;">Como funciona?</h3>
-            
             <p style="color: var(--secondary-text-color); font-size: 0.95rem; line-height: 1.6; margin-bottom: 20px;">
                 Utilizamos <strong>Inteligência Artificial avançada</strong> para gerar cenários e atmosferas únicas que reagem perfeitamente ao clima da sua música.
             </p>
@@ -111,12 +130,11 @@
             </div>
             <p style="color: var(--whatsapp-color); font-weight: 700; font-size: 0.9rem; margin-top: 0;">PREÇO ACESSÍVEL PARA ARTISTAS</p>
             
-            <button onclick="trackWpp('Olá Rick, quero um Visualizer Loop para minha música por R$ 45!')" class="btn-whatsapp" style="padding: 18px; font-size: 1rem; margin-top: 20px; width: 100%; max-width: 400px;">
+            <button onclick="trackWpp('Olá Rick, quero um Visualizer Loop para minha música por R$ 45!')" class="btn-whatsapp">
                 SOLICITAR MEU VISUALIZER
             </button>
             <p style="font-size: 0.7rem; color: #666; margin-top: 15px;">Atendimento exclusivo no WhatsApp.</p>
         </div>
-
     </main>
 
     <footer style="margin-top: 40px; text-align: center; color: #555; font-size: 0.8rem;">
@@ -127,10 +145,16 @@
         function trackWpp(mensagem) {
             const numero = "5533998544308";
             const url = "https://wa.me/" + numero + "?text=" + encodeURIComponent(mensagem);
+            
+            // Disparo do evento Lead para o Pixel do Visualizer
             if (typeof fbq !== 'undefined') {
                 fbq('track', 'Lead');
             }
-            setTimeout(function() { window.open(url, '_blank'); }, 400); 
+            
+            // Delay estratégico para garantir a marcação no Meta
+            setTimeout(function() { 
+                window.open(url, '_blank'); 
+            }, 400); 
         }
 
         function createParticles() {

@@ -7,7 +7,8 @@
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&display=swap" rel="stylesheet">
     <link rel="icon" type="image/png" href="icon.png">
-<link rel="apple-touch-icon" href="icon.png">
+    <link rel="apple-touch-icon" href="icon.png">
+
     <script>
     !function(f,b,e,v,n,t,s)
     {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -17,10 +18,13 @@
     t.src=v;s=b.getElementsByTagName(e)[0];
     s.parentNode.insertBefore(t,s)}(window, document,'script',
     'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '831647356068561');
+    fbq('init', '1487746639660090'); // ID do Pixel de Videoclipes
     fbq('track', 'PageView');
     </script>
-</head>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1487746639660090&ev=PageView&noscript=1"
+    /></noscript>
+    </head>
 <body>
 
     <div id="particle-container"></div>
@@ -32,7 +36,7 @@
         <a href="ensaios-ia.html">Ensaios IA</a>
     </nav>
 
-    <div class="landing-container" style="text-align: center; padding: 40px 20px; max-width: 800px; margin: 0 auto;">
+    <main class="landing-container" style="text-align: center; padding: 40px 20px; max-width: 800px; margin: 0 auto;">
         
         <h1 style="color: var(--accent-color); font-size: 2.5rem; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 10px;">Videoclipes</h1>
         <p style="color: var(--secondary-text-color); font-size: 1rem; margin-bottom: 30px;">Estética de Cinema com Tecnologia de Ponta</p>
@@ -63,24 +67,32 @@
             </div>
             <p style="color: var(--whatsapp-color); font-weight: 700; font-size: 0.9rem; margin-top: 0;">PREÇO PROMOCIONAL POR TEMPO LIMITADO</p>
             
-            <button onclick="trackWpp('Olá Rick, vi que o clipe custa 297 e quero garantir minha vaga!')" class="btn-whatsapp" style="padding: 18px; font-size: 1rem; margin-top: 20px;">
+            <button onclick="trackWpp('Olá Rick, vi que o clipe custa 297 e quero garantir minha vaga!')" class="btn-whatsapp" style="padding: 18px; font-size: 1rem; margin-top: 20px; width: 100%; max-width: 450px; font-weight: 800; cursor: pointer; border-radius: 8px; border: none; background-color: var(--whatsapp-color); color: white; font-family: 'Montserrat', sans-serif;">
                 RESERVAR MEU CLIPE AGORA
             </button>
             <p style="font-size: 0.7rem; color: #666; margin-top: 15px;">Atendimento exclusivo no WhatsApp.</p>
         </div>
 
-    </div>
+    </main>
 
-    <footer style="margin-top: 40px;"><p>&copy; 2026 Rick Borges - Visual Studio.</p></footer>
+    <footer style="margin-top: 40px; text-align: center; color: #555; font-size: 0.8rem;">
+        <p>&copy; 2026 Rick Borges - Visual Studio.</p>
+    </footer>
 
     <script>
         function trackWpp(mensagem) {
             const numero = "5533998544308";
             const url = "https://wa.me/" + numero + "?text=" + encodeURIComponent(mensagem);
+            
+            // Disparo do evento de Lead para o Pixel de Videoclipes
             if (typeof fbq !== 'undefined') {
                 fbq('track', 'Lead');
             }
-            setTimeout(function() { window.open(url, '_blank'); }, 400); 
+            
+            // Delay de 400ms para garantir o envio dos dados ao Meta
+            setTimeout(function() { 
+                window.open(url, '_blank'); 
+            }, 400); 
         }
 
         function createParticles() {
