@@ -32,13 +32,18 @@
             margin: 0 auto;
         }
 
+        /* GRADE 2x2 PARA COMPARAÇÃO */
         .image-showcase {
             margin: 0 auto 30px;
-            max-width: 450px;
+            max-width: 700px; 
+            display: grid;
+            grid-template-columns: 1fr 1fr; /* Duas colunas */
+            gap: 15px; /* Espaço entre as imagens */
         }
 
         .image-showcase img {
             width: 100%;
+            height: auto;
             border-radius: 12px;
             border: 1px solid #333;
             box-shadow: 0 0 30px rgba(230,0,0,0.15);
@@ -154,7 +159,11 @@
         .wpp-float svg { width: 35px; height: 35px; fill: white; }
 
         @media (max-width: 768px) {
-            .image-showcase { max-width: 320px; }
+            .image-showcase { 
+                /* Mantém 2 colunas no celular para não quebrar a comparação */
+                grid-template-columns: 1fr 1fr; 
+                gap: 10px; 
+            }
             .landing-container { padding: 20px 15px; }
             .btn-cta-wpp { font-size: 0.9rem; }
             .wpp-float { width: 50px; height: 50px; bottom: 15px; right: 15px; }
@@ -183,7 +192,10 @@
         <p style="color: var(--secondary-text-color); font-size: 1rem; margin-bottom: 30px;">Comemore seu novo ciclo com fotos de alto padrão e tratamento artístico.</p>
 
         <div class="image-showcase">
-            <img src="img5.png" alt="Exemplo Ensaio Aniversário IA">
+            <img src="img5.png" alt="Comparativo Ensaio Aniversário IA 1">
+            <img src="img6.png" alt="Comparativo Ensaio Aniversário IA 2">
+            <img src="img7.png" alt="Comparativo Ensaio Aniversário IA 3">
+            <img src="img8.png" alt="Comparativo Ensaio Aniversário IA 4">
         </div>
 
         <div class="content-box">
@@ -197,7 +209,7 @@
                 <li><strong>Toque Humano:</strong> Pós-tratamento manual para garantir realismo.</li>
                 <li><strong>Visual Profissional:</strong> Ideal para atualizar suas redes sociais.</li>
             </ul>
-            <div class="delivery-notice">⚡ Entrega de 1 a 2 dias úteis (após confirmação do pagamento)</div>
+            <div class="delivery-notice">⚡ Entrega de 1 a 3 dias (após confirmação do pagamento)</div>
         </div>
 
         <div class="free-test-box">
@@ -233,7 +245,6 @@
             const url = "https://wa.me/" + numero + "?text=" + encodeURIComponent(mensagem);
             
             if (typeof fbq !== 'undefined') {
-                // ALTERADO: Agora dispara 'Contact' para funcionar em qualquer objetivo de campanha
                 fbq('track', 'Contact');
             }
             
