@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&display=swap" rel="stylesheet">
     <link rel="icon" type="image/png" href="icon.png">
-<link rel="apple-touch-icon" href="icon.png">
+    <link rel="apple-touch-icon" href="icon.png">
     <script>
     !function(f,b,e,v,n,t,s)
     {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -17,7 +17,7 @@
     t.src=v;s=b.getElementsByTagName(e)[0];
     s.parentNode.insertBefore(t,s)}(window, document,'script',
     'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '831647356068561');
+    fbq('init', '831647356068561'); // Pixel Home
     fbq('track', 'PageView');
     </script>
 </head>
@@ -29,13 +29,13 @@
         <svg viewBox="0 0 32 32"><path d="M16 0c-8.837 0-16 7.163-16 16 0 2.825 0.733 5.476 2.017 7.783l-2.017 7.351 7.522-1.972c2.253 1.229 4.843 1.929 7.604 1.929 8.837 0 16-7.163 16-16s-7.163-16-16-16zM24.062 22.045c-0.344 0.966-1.701 1.764-2.322 1.887-0.621 0.123-1.242 0.246-2.103-0.062-0.862-0.308-4.103-1.579-6.93-4.103-2.827-2.524-4.244-4.821-4.244-6.302 0-1.482 0.758-2.206 1.034-2.481s0.621-0.344 0.827-0.344c0.207 0 0.414 0 0.586 0.010 0.183 0.010 0.424-0.069 0.665 0.506 0.241 0.586 0.827 2.013 0.896 2.151s0.115 0.3 0.023 0.483c-0.092 0.183-0.138 0.3-0.276 0.46s-0.287 0.368-0.414 0.506c-0.126 0.138-0.264 0.287-0.115 0.54s0.665 1.092 1.425 1.77c0.977 0.874 1.793 1.149 2.058 1.287 0.264 0.138 0.414 0.115 0.575-0.069s0.69-0.805 0.874-1.08c0.183-0.276 0.368-0.23 0.621-0.138 0.253 0.092 1.609 0.758 1.885 0.896s0.46 0.207 0.529 0.322c0.069 0.115 0.069 0.667-0.276 1.632z"></path></svg>
     </div>
 
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="videoclipes.html">Videoclipes</a>
-        <a href="visualizers.html">Visualizers</a>
-        <a href="artes-elite.html">Artes</a>
-        <a href="ensaios-ia.html">Ensaios IA</a>
-        <a href="ensaio-niver.html">Ensaio Niver</a>
+    <nav class="main-nav">
+        <a href="index.html" class="nav-link active">Home</a>
+        <a href="videoclipes.html" class="nav-link">Videoclipes</a>
+        <a href="visualizers.html" class="nav-link">Visualizers</a>
+        <a href="artes-elite.html" class="nav-link">Artes</a>
+        <a href="ensaios-ia.html" class="nav-link">Ensaios IA</a>
+        <a href="ensaio-niver.html" class="nav-link">Ensaio Niver</a>
     </nav>
 
     <header class="banner"></header>
@@ -80,10 +80,44 @@
             <img src="rick-foto.png" alt="Rick Borges" class="about-img"> 
             <div class="about-text">
                 <h2>A Mente por Trás da Arte</h2>
-                <p>Com mais de uma década de estrada, <strong>Rick Borges</strong> consolidou sua carreira no "front" da música independente, assumindo pessoalmente cada etapa: da produção musical ao marketing de alto impacto.</p>
+                <p>Com mais de uma década de estrada, <strong>Rick Borges</strong> consolidou sua carreira no "front" da música independente, unindo a vivência de estúdio com estratégias de marketing de alto impacto.</p>
                 <p>Essa jornada trouxe o domínio total da identidade visual que o mercado exige hoje. Agora, essa expertise está disponível para o seu projeto.</p>
                 <p>As <strong>Soluções Visuais</strong> da nossa plataforma entregam o que há de mais moderno em design, inteligência artificial e estética urbana, garantindo que sua arte tenha o impacto visual que a sua música merece.</p>
-                <p><em>Do beat ao clipe, entregamos profissionalismo de quem vive a cena desde 2010. Vamos elevar o nível do seu projeto?</em></p>
+                <p><em>Do roteiro ao clipe, entregamos o profissionalismo de quem vive a cena desde 2010. Vamos elevar o nível visual do seu projeto?</em></p>
+            </div>
+        </div>
+    </section>
+
+<section class="about-section" style="border-top: 1px solid #222;">
+        <div class="about-container" style="display: block; max-width: 800px;">
+            <h2 class="section-title" style="margin-bottom: 30px;">Dúvidas Frequentes</h2>
+            
+            <div style="text-align: left; background: var(--surface-color); padding: 20px; border-radius: 8px; margin-bottom: 15px;">
+                <p style="font-weight: 800; color: var(--accent-color); margin-bottom: 10px;">Como funciona o Ensaio com IA? Eu preciso ir ao estúdio?</p>
+                <p style="font-size: 0.9rem; color: var(--secondary-text-color);">Não! O processo é 100% digital. Para os ensaios fotográficos, você só precisa enviar <strong>apenas 1 foto</strong> de referência do seu rosto. Nossa tecnologia recria sua imagem em cenários profissionais com alta fidelidade.</p>
+            </div>
+
+            <div style="text-align: left; background: var(--surface-color); padding: 20px; border-radius: 8px; margin-bottom: 15px;">
+                <p style="font-weight: 800; color: var(--accent-color); margin-bottom: 10px;">Como funcionam os Videoclipes e Visualizers com IA?</p>
+                <p style="font-size: 0.9rem; color: var(--secondary-text-color);">Para projetos de vídeo, solicitamos de <strong>4 a 6 fotos</strong> do seu rosto em ângulos diferentes. Essa variedade é essencial para treinarmos a IA a captar cada detalhe e movimento, trazendo o máximo de realismo cinematográfico para o seu clipe.</p>
+            </div>
+
+            <div style="text-align: left; background: var(--surface-color); padding: 20px; border-radius: 8px; margin-bottom: 15px;">
+                <p style="font-weight: 800; color: var(--accent-color); margin-bottom: 10px;">Qual o prazo de entrega?</p>
+                <ul style="font-size: 0.9rem; color: var(--secondary-text-color); list-style: none; padding: 0;">
+                    <li style="margin-bottom: 8px;">• <strong>Artes e Ensaios IA:</strong> Até 48h.</li>
+                    <li style="margin-bottom: 8px;">• <strong>Visualizers:</strong> Até 3 dias úteis.</li>
+                    <li>• <strong>Videoclipes:</strong> Em média 9 dias úteis após o envio dos materiais.</li>
+                </ul>
+            </div>
+
+            <div style="text-align: left; background: var(--surface-color); padding: 20px; border-radius: 8px; margin-bottom: 15px;">
+                <p style="font-weight: 800; color: var(--accent-color); margin-bottom: 10px;">Como é feito o pagamento?</p>
+                <p style="font-size: 0.9rem; color: var(--secondary-text-color);">Aceitamos Pix ou <strong>cartão de crédito em até 12x</strong> (com acréscimo de juros da operadora). A produção inicia logo após a confirmação do pagamento.</p>
+            </div>
+
+            <div style="text-align: center; margin-top: 30px;">
+                <p style="font-size: 0.8rem; color: #666;">Dúvidas sobre um projeto específico? Me chama no WhatsApp.</p>
             </div>
         </div>
     </section>
@@ -91,17 +125,15 @@
     <footer><p>&copy; 2026 Rick Borges - Visual Studio. Todos os direitos reservados.</p></footer>
 
     <script>
-        // Função de rastreio e redirecionamento
         function trackWpp(mensagem) {
             const numero = "5533998544308";
             const url = "https://wa.me/" + numero + "?text=" + encodeURIComponent(mensagem);
             if (typeof fbq !== 'undefined') {
-                fbq('track', 'Lead');
+                fbq('track', 'Contact'); 
             }
             setTimeout(function() { window.open(url, '_blank'); }, 400); 
         }
 
-        // Script de Partículas (Opcional se quiser o efeito na home)
         function createParticles() {
             const container = document.getElementById('particle-container');
             if (!container) return;
