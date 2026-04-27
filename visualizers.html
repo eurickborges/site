@@ -126,11 +126,11 @@
         <div style="margin-top: 40px; background: rgba(255,255,255,0.03); padding: 30px; border-radius: 12px; border: 1px solid #222;">
             <p style="text-transform: uppercase; letter-spacing: 1px; font-size: 0.8rem; color: var(--secondary-text-color); margin-bottom: 5px;">Investimento único</p>
             <div style="font-size: 3rem; font-weight: 800; color: #fff; margin-bottom: 5px;">
-                <span style="font-size: 1.2rem; vertical-align: top; margin-right: 5px;">R$</span>45
+                <span style="font-size: 1.2rem; vertical-align: top; margin-right: 5px;">R$</span>49
             </div>
             <p style="color: var(--whatsapp-color); font-weight: 700; font-size: 0.9rem; margin-top: 0;">PREÇO ACESSÍVEL PARA ARTISTAS</p>
             
-            <button onclick="trackWpp('Olá Rick, quero um Visualizer Loop para minha música por R$ 45!')" class="btn-whatsapp">
+            <button onclick="trackWpp('Olá Rick! Vi os detalhes do Visualizer no site e quero um para minha música.')" class="btn-whatsapp">
                 SOLICITAR MEU VISUALIZER
             </button>
             <p style="font-size: 0.7rem; color: #666; margin-top: 15px;">Atendimento exclusivo no WhatsApp.</p>
@@ -146,12 +146,10 @@
             const numero = "5533998544308";
             const url = "https://wa.me/" + numero + "?text=" + encodeURIComponent(mensagem);
             
-            // Disparo do evento Lead para o Pixel do Visualizer
             if (typeof fbq !== 'undefined') {
                 fbq('track', 'Lead');
             }
             
-            // Delay estratégico para garantir a marcação no Meta
             setTimeout(function() { 
                 window.open(url, '_blank'); 
             }, 400); 

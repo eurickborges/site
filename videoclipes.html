@@ -49,7 +49,7 @@
             <h3 style="margin-top: 0; font-size: 1.1rem; text-transform: uppercase;">POR QUE INVESTIR EM UM CLIPE DE ELITE?</h3>
             
             <p style="background: rgba(230, 0, 0, 0.1); padding: 15px; border-radius: 8px; border: 1px dashed var(--accent-color); font-size: 0.95rem; margin-bottom: 20px;">
-                <strong>DIFERENCIAL ÚNICO:</strong> Com apenas <strong>1 foto sua</strong>, criamos um clipe completo em qualquer cenário imaginável, com movimentos de câmera e visual de cinema.
+                <strong>DIFERENCIAL ÚNICO:</strong> Com apenas <strong>4 a 6 fotos suas</strong> em ângulos diferentes, treinamos a IA para criar um clipe completo com máximo realismo e visual de cinema.
             </p>
 
             <ul style="color: var(--secondary-text-color); padding-left: 20px; font-size: 0.9rem; line-height: 1.8;">
@@ -63,11 +63,11 @@
         <div style="margin-top: 40px; background: rgba(255,255,255,0.03); padding: 30px; border-radius: 12px; border: 1px solid #222;">
             <p style="text-transform: uppercase; letter-spacing: 1px; font-size: 0.8rem; color: var(--secondary-text-color); margin-bottom: 5px;">Investimento para o seu lançamento</p>
             <div style="font-size: 3rem; font-weight: 800; color: #fff; margin-bottom: 5px;">
-                <span style="font-size: 1.2rem; vertical-align: top; margin-right: 5px;">R$</span>297
+                <span style="font-size: 1.2rem; vertical-align: top; margin-right: 5px;">R$</span>330
             </div>
             <p style="color: var(--whatsapp-color); font-weight: 700; font-size: 0.9rem; margin-top: 0;">PREÇO PROMOCIONAL POR TEMPO LIMITADO</p>
             
-            <button onclick="trackWpp('Olá Rick, vi que o clipe custa 297 e quero garantir minha vaga!')" class="btn-whatsapp" style="padding: 18px; font-size: 1rem; margin-top: 20px; width: 100%; max-width: 450px; font-weight: 800; cursor: pointer; border-radius: 8px; border: none; background-color: var(--whatsapp-color); color: white; font-family: 'Montserrat', sans-serif;">
+            <button onclick="trackWpp('Olá Rick! Vi os detalhes do videoclipe no site e quero garantir minha vaga agora.')" class="btn-whatsapp" style="padding: 18px; font-size: 1rem; margin-top: 20px; width: 100%; max-width: 450px; font-weight: 800; cursor: pointer; border-radius: 8px; border: none; background-color: var(--whatsapp-color); color: white; font-family: 'Montserrat', sans-serif;">
                 RESERVAR MEU CLIPE AGORA
             </button>
             <p style="font-size: 0.7rem; color: #666; margin-top: 15px;">Atendimento exclusivo no WhatsApp.</p>
@@ -84,12 +84,10 @@
             const numero = "5533998544308";
             const url = "https://wa.me/" + numero + "?text=" + encodeURIComponent(mensagem);
             
-            // Disparo do evento de Lead para o Pixel de Videoclipes
             if (typeof fbq !== 'undefined') {
                 fbq('track', 'Lead');
             }
             
-            // Delay de 400ms para garantir o envio dos dados ao Meta
             setTimeout(function() { 
                 window.open(url, '_blank'); 
             }, 400); 
