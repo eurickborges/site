@@ -233,7 +233,8 @@
             const url = "https://wa.me/" + numero + "?text=" + encodeURIComponent(mensagem);
             
             if (typeof fbq !== 'undefined') {
-                fbq('track', 'Lead');
+                // ALTERADO: Agora dispara 'Contact' para funcionar em qualquer objetivo de campanha
+                fbq('track', 'Contact');
             }
             
             setTimeout(function() { 
