@@ -61,6 +61,25 @@
             border-left: 4px solid var(--accent-color);
         }
 
+        .btn-whatsapp {
+            padding: 18px;
+            font-size: 1rem;
+            margin-top: 20px;
+            width: 100%;
+            max-width: 400px;
+            font-weight: 800;
+            cursor: pointer;
+            border-radius: 8px;
+            border: none;
+            background-color: var(--whatsapp-color);
+            color: white;
+            font-family: 'Montserrat', sans-serif;
+            text-transform: uppercase;
+            transition: transform 0.2s;
+        }
+
+        .btn-whatsapp:hover { transform: scale(1.02); }
+
         @media (max-width: 768px) {
             .image-showcase { max-width: 300px; }
             .landing-container { padding: 20px 15px; }
@@ -104,16 +123,12 @@
         </div>
 
         <div style="margin-top: 40px; background: rgba(255,255,255,0.03); padding: 30px; border-radius: 12px; border: 1px solid #222;">
-            <p style="text-transform: uppercase; letter-spacing: 1px; font-size: 0.8rem; color: var(--secondary-text-color); margin-bottom: 5px;">Preço por Arte</p>
-            <div style="font-size: 3rem; font-weight: 800; color: #fff; margin-bottom: 5px;">
-                <span style="font-size: 1.2rem; vertical-align: top; margin-right: 5px;">R$</span>15
-            </div>
-            <p style="color: var(--whatsapp-color); font-weight: 700; font-size: 0.9rem; margin-top: 0;">ALTA QUALIDADE PELO MELHOR PREÇO</p>
+            <p style="text-transform: uppercase; letter-spacing: 1px; font-size: 0.9rem; color: #fff; margin-bottom: 10px; font-weight: 700;">Destaque seu lançamento com uma arte profissional</p>
             
-            <button onclick="trackWpp('Olá Rick! Vi os detalhes das Artes de Elite no site e quero solicitar uma para o meu projeto.')" class="btn-whatsapp" style="padding: 18px; font-size: 1rem; margin-top: 20px; width: 100%; max-width: 400px; font-weight: 800; cursor: pointer; border-radius: 8px; border: none; background-color: var(--whatsapp-color); color: white; font-family: 'Montserrat', sans-serif;">
-                SOLICITAR MINHA ARTE
+            <button onclick="trackWpp('Olá Rick! Vi os detalhes das Artes de Elite no site e gostaria de solicitar um orçamento para o meu projeto.')" class="btn-whatsapp">
+                SOLICITAR MINHA ARTE VIA WHATSAPP
             </button>
-            <p style="font-size: 0.7rem; color: #666; margin-top: 15px;">Entrega rápida via WhatsApp.</p>
+            <p style="font-size: 0.7rem; color: #666; margin-top: 15px;">Entrega rápida e atendimento exclusivo.</p>
         </div>
 
     </main>
