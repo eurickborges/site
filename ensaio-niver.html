@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ensaios Premium IA - Rick Borges</title>
+    <title>Ensaio de Aniversário Premium IA - Rick Borges</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
     
     <!-- Configuração do Pixel -->
@@ -22,7 +22,7 @@
 
     <style>
         :root {
-            --accent-color: #e6ce00; /* Amarelo Premium */
+            --accent-color: #e6ce00;
             --bg-color: #0a0a0a;
             --surface-color: #161616;
             --text-main: #ffffff;
@@ -39,7 +39,7 @@
         }
 
         .hero {
-            padding: 50px 20px;
+            padding: 50px 20px 20px;
             text-align: center;
             background: radial-gradient(circle at center, #1a1a00 0%, #0a0a0a 100%);
         }
@@ -72,7 +72,6 @@
             margin: 0 auto 40px;
         }
 
-        /* Showcase de Imagens */
         .image-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -85,11 +84,8 @@
             width: 100%;
             border-radius: 12px;
             border: 1px solid #333;
-            transition: transform 0.3s;
         }
-        .image-grid img:hover { transform: scale(1.03); }
 
-        /* Caixa de Conteúdo */
         .content-box {
             background: var(--surface-color);
             max-width: 600px;
@@ -100,9 +96,16 @@
             border-left: 5px solid var(--accent-color);
         }
 
-        .price-tag {
+        /* Seção de Preço e Botão Principal */
+        .conversion-area {
             text-align: center;
-            margin: 40px 0;
+            padding: 40px 20px;
+            background: #000;
+            border-top: 1px solid #222;
+        }
+
+        .price-tag {
+            margin-bottom: 25px;
         }
 
         .price-value {
@@ -115,31 +118,44 @@
 
         .price-symbol { font-size: 1.5rem; vertical-align: top; }
 
-        /* Botão */
-        .cta-container {
-            position: sticky;
-            bottom: 0;
-            background: rgba(10,10,10,0.9);
-            padding: 20px;
-            backdrop-filter: blur(10px);
-            border-top: 1px solid #222;
-            text-align: center;
-        }
-
         .btn-whatsapp {
             background: var(--accent-color);
             color: #000;
             text-decoration: none;
-            padding: 20px;
+            padding: 22px;
             border-radius: 12px;
             font-weight: 900;
-            font-size: 1rem;
+            font-size: 1.1rem;
             display: inline-block;
             width: 100%;
             max-width: 400px;
             border: none;
             cursor: pointer;
             text-transform: uppercase;
+            box-shadow: 0 10px 20px rgba(230, 206, 0, 0.2);
+            transition: transform 0.2s;
+        }
+
+        .btn-whatsapp:active { transform: scale(0.98); }
+
+        /* Botão Flutuante */
+        .wpp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 30px;
+            right: 20px;
+            background-color: var(--whatsapp-green);
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 5px 15px rgba(0,0,0,0.5);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
         }
 
         .free-test {
@@ -150,61 +166,81 @@
             margin-top: 20px;
             font-size: 0.85rem;
             color: var(--accent-color);
+            text-align: center;
+        }
+
+        footer {
+            padding: 40px 20px;
+            text-align: center;
+            font-size: 0.75rem;
+            color: #444;
+            background: #000;
+            border-top: 1px solid #111;
         }
 
         @media (max-width: 600px) {
-            h1 { font-size: 2rem; }
-            .price-value { font-size: 3rem; }
+            h1 { font-size: 1.8rem; }
+            .price-value { font-size: 3.5rem; }
         }
     </style>
 </head>
 <body>
 
+    <a href="javascript:void(0)" onclick="trackWpp()" class="wpp-float">
+        <svg style="width:35px;height:35px" viewBox="0 0 24 24">
+            <path fill="currentColor" d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2M12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.66 20.15 9.3 19.8 8.1 19.14L7.81 18.96L4.67 19.8L5.52 16.75L5.33 16.45C4.6 15.3 4.21 13.96 4.21 12.58C4.21 8.04 7.9 4.35 12.44 4.35C12.45 4.35 12.46 4.35 12.47 4.35V3.67M12.05 3.67Z" />
+        </svg>
+    </a>
+
     <main class="hero">
-        <span class="highlight-tag">Estúdio Digital Premium</span>
-        <h1>Sua Melhor Versão<br><span style="color:var(--accent-color)">Sem Sair de Casa</span></h1>
-        <p>Transformamos fotos simples em ensaios profissionais épicos para LinkedIn, Formaturas e Casais.</p>
+        <span class="highlight-tag">Especialista em Ensaios de Aniversário</span>
+        <h1>O Ensaio dos Seus Sonhos<br><span style="color:var(--accent-color)">Feito por Inteligência Artificial</span></h1>
+        <p>Fotos profissionais de aniversário com cenários luxuosos e looks impecáveis sem precisar de estúdio físico.</p>
 
         <div class="image-grid">
-            <img src="img5.png" alt="Profissional">
-            <img src="img6.png" alt="Casal">
-            <img src="img7.png" alt="Formatura">
-            <img src="img8.png" alt="Aniversário">
+            <img src="img5.png" alt="Ensaio Aniversário">
+            <img src="img6.png" alt="Ensaio Aniversário">
+            <img src="img7.png" alt="Ensaio Aniversário">
+            <img src="img8.png" alt="Ensaio Aniversário">
         </div>
 
         <div class="content-box">
             <h3 style="color: var(--accent-color); margin-top: 0;">O QUE VOCÊ RECEBE:</h3>
-            <ul style="padding-left: 20px; font-size: 0.9rem; color: var(--text-dim);">
-                <li><strong>15 Fotos em Alta Resolução:</strong> Tratadas com IA e Photoshop.</li>
-                <li><strong>Estilos Diversos:</strong> Do executivo ao artístico.</li>
-                <li><strong>Realismo Total:</strong> Edição manual para garantir que pareça você.</li>
-                <li><strong>Entrega Recorde:</strong> Suas fotos prontas em até 48 horas.</li>
+            <ul style="padding-left: 20px; font-size: 0.9rem; color: var(--text-dim); list-style-type: '✓ ';">
+                <li style="margin-bottom: 10px;"><strong>15 Fotos em Alta Resolução:</strong> Tratadas com IA e Photoshop.</li>
+                <li style="margin-bottom: 10px;"><strong>Realismo Total:</strong> Edição manual para garantir que pareça você.</li>
+                <li style="margin-bottom: 10px;"><strong>Entrega Recorde:</strong> Suas fotos prontas em até 48 horas.</li>
             </ul>
             
             <div class="free-test">
-                <strong>🛡️ TESTE GRATUITO:</strong> Me chame, envie sua foto e eu te mando uma prévia sem compromisso!
+                <strong>🛡️ ZERO RISCO — TESTE GRATUITO:</strong><br>
+                Me chame agora, envie sua foto e eu te mando uma prévia sem compromisso!
             </div>
         </div>
+    </main>
 
+    <!-- ÁREA DE CONVERSÃO: Preço e Botão Juntos -->
+    <section class="conversion-area">
         <div class="price-tag">
             <span style="color: var(--text-dim); text-transform: uppercase; font-size: 0.8rem; letter-spacing: 2px;">Investimento Único</span>
             <span class="price-value"><span class="price-symbol">R$</span>35</span>
-            <span style="color: var(--whatsapp-green); font-weight: 700;">VALORIZE SUA IMAGEM HOJE</span>
+            <span style="color: var(--whatsapp-green); font-weight: 700; font-size: 0.9rem;">VALORIZE SUA IMAGEM HOJE</span>
         </div>
-        
-        <div style="height: 100px;"></div> <!-- Espaço para o botão fixo não cobrir o conteúdo -->
-    </main>
 
-    <div class="cta-container">
         <button onclick="trackWpp()" class="btn-whatsapp">
-            QUERO MEU ENSAIO + PRÉVIA GRÁTIS
+            QUERO MINHA PRÉVIA GRÁTIS AGORA
         </button>
-    </div>
+    </section>
+
+    <footer>
+        Rick Borges © 2026 - Todos os direitos reservados.<br>
+        Tecnologia IA de ponta para sua imagem.
+    </footer>
 
     <script>
         function trackWpp() {
             const numero = "5533998544308";
-            const mensagem = "Olá Rick! Vi os Ensaios IA no site e quero transformar minha foto. Como funciona a prévia gratuita?";
+            const mensagem = "Olá Rick! Quero minha prévia gratuita dos Ensaios IA. Estou enviando minha foto agora para você transformar!";
             const url = "https://wa.me/" + numero + "?text=" + encodeURIComponent(mensagem);
             
             if (typeof fbq !== 'undefined') {
