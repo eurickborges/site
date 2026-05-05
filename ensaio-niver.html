@@ -4,11 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ensaios Premium IA - Rick Borges</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/png" href="icon.png">
-    <link rel="apple-touch-icon" href="icon.png">
-
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Configuração do Pixel -->
     <script>
     !function(f,b,e,v,n,t,s)
     {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -21,230 +19,192 @@
     fbq('init', '1682652453049929'); 
     fbq('track', 'PageView');
     </script>
-    <noscript><img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=1682652453049929&ev=PageView&noscript=1"
-    /></noscript>
+
     <style>
-        .landing-container {
+        :root {
+            --accent-color: #e6ce00; /* Amarelo Premium */
+            --bg-color: #0a0a0a;
+            --surface-color: #161616;
+            --text-main: #ffffff;
+            --text-dim: #a0a0a0;
+            --whatsapp-green: #25d366;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        .hero {
+            padding: 50px 20px;
             text-align: center;
-            padding: 40px 20px;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .image-showcase {
-            margin: 0 auto 30px;
-            max-width: 700px; 
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
-        }
-
-        .image-showcase img {
-            width: 100%;
-            height: auto;
-            border-radius: 12px;
-            border: 1px solid #333;
-            box-shadow: 0 0 30px rgba(230,0,0,0.15);
+            background: radial-gradient(circle at center, #1a1a00 0%, #0a0a0a 100%);
         }
 
         .highlight-tag {
-            display: inline-block;
-            background: #e6ce00;
-            color: black;
-            padding: 4px 12px;
-            border-radius: 4px;
-            font-size: 0.7rem;
-            font-weight: 800;
-            margin-bottom: 15px;
+            background: var(--accent-color);
+            color: #000;
+            padding: 6px 15px;
+            font-size: 0.65rem;
+            font-weight: 900;
+            border-radius: 50px;
+            letter-spacing: 2px;
             text-transform: uppercase;
-        }
-
-        .content-box {
-            text-align: left;
-            background: var(--surface-color);
-            padding: 25px;
-            border-radius: 12px;
-            border-left: 4px solid #e6ce00;
-        }
-
-        .pack-badge {
-            background: rgba(37, 211, 102, 0.1);
-            border: 1px solid var(--whatsapp-color);
-            color: var(--whatsapp-color);
-            padding: 10px;
-            border-radius: 8px;
-            font-weight: 700;
             display: inline-block;
             margin-bottom: 20px;
-            font-size: 0.9rem;
         }
 
-        .delivery-notice {
-            background: rgba(230, 206, 0, 0.1);
-            border: 1px dashed #e6ce00;
-            color: #e6ce00;
-            padding: 10px;
-            border-radius: 8px;
-            margin-top: 15px;
-            font-weight: 700;
-            font-size: 0.85rem;
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 900;
+            line-height: 1.1;
+            margin: 0 0 15px;
             text-transform: uppercase;
         }
 
-        .free-test-box {
-            margin-top: 30px;
-            background: linear-gradient(145deg, #1a1a1a, #000);
-            padding: 20px;
-            border-radius: 12px;
-            border: 1px solid #e6ce00;
-            text-align: center;
-        }
-
-        .free-test-box h4 {
-            color: #e6ce00;
-            margin-top: 0;
-            text-transform: uppercase;
-            font-size: 0.9rem;
-        }
-
-        .btn-cta-wpp {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            padding: 20px;
+        .hero p {
+            color: var(--text-dim);
             font-size: 1.1rem;
-            margin-top: 20px;
-            width: 100%;
-            max-width: 450px;
-            background-color: #e6ce00;
-            color: black;
-            border: none;
-            cursor: pointer;
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 800;
-            text-transform: uppercase;
-            border-radius: 8px;
-            text-decoration: none;
-            margin-left: auto;
-            margin-right: auto;
-            transition: transform 0.2s;
+            max-width: 600px;
+            margin: 0 auto 40px;
         }
 
-        .btn-cta-wpp:hover { transform: scale(1.02); }
-        .btn-cta-wpp svg { width: 24px; fill: black; }
+        /* Showcase de Imagens */
+        .image-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            max-width: 600px;
+            margin: 0 auto 40px;
+        }
 
-        .wpp-float {
-            position: fixed;
-            width: 60px;
-            height: 60px;
-            bottom: 20px;
-            right: 20px;
-            background-color: #25d366;
-            color: #FFF;
-            border-radius: 50px;
-            text-align: center;
-            box-shadow: 2px 2px 10px rgba(0,0,0,0.5);
-            z-index: 1000;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-decoration: none;
+        .image-grid img {
+            width: 100%;
+            border-radius: 12px;
+            border: 1px solid #333;
             transition: transform 0.3s;
         }
+        .image-grid img:hover { transform: scale(1.03); }
 
-        .wpp-float:hover { transform: scale(1.1); }
-        .wpp-float svg { width: 35px; height: 35px; fill: white; }
+        /* Caixa de Conteúdo */
+        .content-box {
+            background: var(--surface-color);
+            max-width: 600px;
+            margin: 0 auto 40px;
+            padding: 30px;
+            border-radius: 20px;
+            text-align: left;
+            border-left: 5px solid var(--accent-color);
+        }
 
-        @media (max-width: 768px) {
-            .image-showcase { 
-                grid-template-columns: 1fr 1fr; 
-                gap: 10px; 
-            }
-            .landing-container { padding: 20px 15px; }
-            .btn-cta-wpp { font-size: 0.9rem; }
-            .wpp-float { width: 50px; height: 50px; bottom: 15px; right: 15px; }
+        .price-tag {
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .price-value {
+            font-size: 4rem;
+            font-weight: 900;
+            color: #fff;
+            display: block;
+            line-height: 1;
+        }
+
+        .price-symbol { font-size: 1.5rem; vertical-align: top; }
+
+        /* Botão */
+        .cta-container {
+            position: sticky;
+            bottom: 0;
+            background: rgba(10,10,10,0.9);
+            padding: 20px;
+            backdrop-filter: blur(10px);
+            border-top: 1px solid #222;
+            text-align: center;
+        }
+
+        .btn-whatsapp {
+            background: var(--accent-color);
+            color: #000;
+            text-decoration: none;
+            padding: 20px;
+            border-radius: 12px;
+            font-weight: 900;
+            font-size: 1rem;
+            display: inline-block;
+            width: 100%;
+            max-width: 400px;
+            border: none;
+            cursor: pointer;
+            text-transform: uppercase;
+        }
+
+        .free-test {
+            background: rgba(230, 206, 0, 0.1);
+            border: 1px dashed var(--accent-color);
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 20px;
+            font-size: 0.85rem;
+            color: var(--accent-color);
+        }
+
+        @media (max-width: 600px) {
+            h1 { font-size: 2rem; }
+            .price-value { font-size: 3rem; }
         }
     </style>
 </head>
 <body>
 
-    <div id="particle-container"></div>
+    <main class="hero">
+        <span class="highlight-tag">Estúdio Digital Premium</span>
+        <h1>Sua Melhor Versão<br><span style="color:var(--accent-color)">Sem Sair de Casa</span></h1>
+        <p>Transformamos fotos simples em ensaios profissionais épicos para LinkedIn, Formaturas e Casais.</p>
 
-    <nav>
-        <a href="index.html">← Voltar para Home</a>
-        <a href="videoclipes.html">Videoclipes</a>
-        <a href="visualizers.html">Visualizers</a>
-        <a href="artes-elite.html">Artes</a>
-        <a href="ensaios-ia.html">Ensaios IA</a>
-    </nav>
-
-    <a href="javascript:void(0)" onclick="trackWpp('Olá Rick! Vi os ensaios de estúdio IA e quero transformar minha foto. Qual o próximo passo?')" class="wpp-float">
-        <svg viewBox="0 0 32 32"><path d="M16 0c-8.837 0-16 7.163-16 16 0 2.825 0.733 5.476 2.017 7.783l-2.017 7.351 7.522-1.972c2.253 1.229 4.843 1.929 7.604 1.929 8.837 0 16-7.163 16-16s-7.163-16-16-16zM24.062 22.045c-0.344 0.966-1.701 1.764-2.322 1.887-0.621 0.123-1.242 0.246-2.103-0.062-0.862-0.308-4.103-1.579-6.93-4.103-2.827-2.524-4.244-4.821-4.244-6.302 0-1.482 0.758-2.206 1.034-2.481s0.621-0.344 0.827-0.344c0.207 0 0.414 0 0.586 0.010 0.183 0.010 0.424-0.069 0.665 0.506 0.241 0.586 0.827 2.013 0.896 2.151s0.115 0.3 0.023 0.483c-0.092 0.183-0.138 0.3-0.276 0.46s-0.287 0.368-0.414 0.506c-0.126 0.138-0.264 0.287-0.115 0.54s0.665 1.092 1.425 1.77c0.977 0.874 1.793 1.149 2.058 1.287 0.264 0.138 0.414 0.115 0.575-0.069s0.69-0.805 0.874-1.08c0.183-0.276 0.368-0.23 0.621-0.138 0.253 0.092 1.609 0.758 1.885 0.896s0.46 0.207 0.529 0.322c0.069 0.115 0.069 0.667-0.276 1.632z"></path></svg>
-    </a>
-
-    <main class="landing-container">
-        <span class="highlight-tag">Estúdio Digital Multi-Estilos</span>
-        <h1 style="color: #e6ce00; font-size: 2.2rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; line-height: 1.2;">
-            Ensaios Fotográficos de Estúdio IA
-        </h1>
-        <p style="color: #fff; font-size: 1.1rem; margin-bottom: 30px; font-weight: 400; line-height: 1.5;">
-            A imagem profissional que você precisa, com a praticidade da Inteligência Artificial. <br>
-            <strong>Aniversários, Formaturas, Casal, Profissional e muito mais.</strong>
-        </p>
-
-        <div class="image-showcase">
-            <img src="img5.png" alt="Exemplo Profissional Direito IA">
-            <img src="img6.png" alt="Exemplo Ensaio Casal IA">
-            <img src="img7.png" alt="Exemplo Formatura IA">
-            <img src="img8.png" alt="Exemplo Aniversário IA">
+        <div class="image-grid">
+            <img src="img5.png" alt="Profissional">
+            <img src="img6.png" alt="Casal">
+            <img src="img7.png" alt="Formatura">
+            <img src="img8.png" alt="Aniversário">
         </div>
 
         <div class="content-box">
-            <h3 style="margin-top: 0; font-size: 1.1rem; text-transform: uppercase; color: #fff;">Sua Melhor Versão, Sem Sair de Casa</h3>
-            <p style="color: var(--secondary-text-color); font-size: 0.95rem; line-height: 1.6; margin-bottom: 15px;">
-                Transformamos uma foto simples do seu celular em um ensaio digno de capa de revista. Perfeito para quem não tem tempo para estúdios físicos, mas exige um resultado impecável.
-            </p>
-            <div class="pack-badge">PACOTE EXCLUSIVO: 15 FOTOS COM TRATAMENTO ARTÍSTICO</div>
-            <ul style="color: var(--secondary-text-color); padding-left: 20px; font-size: 0.85rem; line-height: 1.8;">
-                <li><strong>Corporativo & Executive:</strong> Ideal para Direito, Medicina e Consultoria (LinkedIn).</li>
-                <li><strong>Comemorações:</strong> Ensaios épicos de Aniversário e Formatura.</li>
-                <li><strong>Especiais:</strong> Ensaios de Casal e momentos românticos.</li>
-                <li><strong>Edição Manual:</strong> Ajustes finos no Photoshop para garantir realismo total.</li>
+            <h3 style="color: var(--accent-color); margin-top: 0;">O QUE VOCÊ RECEBE:</h3>
+            <ul style="padding-left: 20px; font-size: 0.9rem; color: var(--text-dim);">
+                <li><strong>15 Fotos em Alta Resolução:</strong> Tratadas com IA e Photoshop.</li>
+                <li><strong>Estilos Diversos:</strong> Do executivo ao artístico.</li>
+                <li><strong>Realismo Total:</strong> Edição manual para garantir que pareça você.</li>
+                <li><strong>Entrega Recorde:</strong> Suas fotos prontas em até 48 horas.</li>
             </ul>
-            <div class="delivery-notice">⚡ Entrega Rápida de 1 a 2 dias</div>
-        </div>
-
-        <div class="free-test-box">
-            <h4>🛡️ Experiência Sem Riscos</h4>
-            <p style="color: #fff; font-size: 0.95rem; margin-bottom: 8px;"><strong>Peça sua demonstração:</strong></p>
-            <p style="color: var(--secondary-text-color); font-size: 0.9rem; margin-top: 0; line-height: 1.5;">
-                Me chame no WhatsApp, envie sua foto e escolha o estilo (Ex: "Quero estilo Advogado" ou "Quero estilo Casamento"). Eu te mando uma <strong>prévia gratuita</strong> antes de você fechar.
-            </p>
-        </div>
-
-        <div style="margin-top: 40px; background: rgba(255,255,255,0.03); padding: 30px; border-radius: 12px; border: 1px solid #222;">
-            <p style="text-transform: uppercase; letter-spacing: 1px; font-size: 0.8rem; color: var(--secondary-text-color); margin-bottom: 5px;">Investimento por Ensaio</p>
-            <div style="font-size: 3rem; font-weight: 800; color: #fff; margin-bottom: 5px;">
-                <span style="font-size: 1.2rem; vertical-align: top; margin-right: 5px;">R$</span>35
-            </div>
-            <p style="color: var(--whatsapp-color); font-weight: 700; font-size: 0.9rem; margin-top: 0;">VALORIZE SUA IMAGEM AGORA</p>
             
-            <button onclick="trackWpp('Olá Rick, quero transformar minha foto! Gostaria de uma prévia gratuita do meu ensaio IA.')" class="btn-cta-wpp">
-                <svg viewBox="0 0 32 32"><path d="M16 0c-8.837 0-16 7.163-16 16 0 2.825 0.733 5.476 2.017 7.783l-2.017 7.351 7.522-1.972c2.253 1.229 4.843 1.929 7.604 1.929 8.837 0 16-7.163 16-16s-7.163-16-16-16zM24.062 22.045c-0.344 0.966-1.701 1.764-2.322 1.887-0.621 0.123-1.242 0.246-2.103-0.062-0.862-0.308-4.103-1.579-6.93-4.103-2.827-2.524-4.244-4.821-4.244-6.302 0-1.482 0.758-2.206 1.034-2.481s0.621-0.344 0.827-0.344c0.207 0 0.414 0 0.586 0.010 0.183 0.010 0.424-0.069 0.665 0.506 0.241 0.586 0.827 2.013 0.896 2.151s0.115 0.3 0.023 0.483c-0.092 0.183-0.138 0.3-0.276 0.46s-0.287 0.368-0.414 0.506c-0.126 0.138-0.264 0.287-0.115 0.54s0.665 1.092 1.425 1.77c0.977 0.874 1.793 1.149 2.058 1.287 0.264 0.138 0.414 0.115 0.575-0.069s0.69-0.805 0.874-1.08c0.183-0.276 0.368-0.23 0.621-0.138 0.253 0.092 1.609 0.758 1.885 0.896s0.46 0.207 0.529 0.322c0.069 0.115 0.069 0.667-0.276 1.632z"></path></svg>
-                QUERO MEU ENSAIO AGORA
-            </button>
+            <div class="free-test">
+                <strong>🛡️ TESTE GRATUITO:</strong> Me chame, envie sua foto e eu te mando uma prévia sem compromisso!
+            </div>
         </div>
+
+        <div class="price-tag">
+            <span style="color: var(--text-dim); text-transform: uppercase; font-size: 0.8rem; letter-spacing: 2px;">Investimento Único</span>
+            <span class="price-value"><span class="price-symbol">R$</span>35</span>
+            <span style="color: var(--whatsapp-green); font-weight: 700;">VALORIZE SUA IMAGEM HOJE</span>
+        </div>
+        
+        <div style="height: 100px;"></div> <!-- Espaço para o botão fixo não cobrir o conteúdo -->
     </main>
 
-    <footer style="margin-top: 40px; text-align: center; color: #555; font-size: 0.8rem;">
-        <p>&copy; 2026 Rick Borges - Visual Studio.</p>
-    </footer>
+    <div class="cta-container">
+        <button onclick="trackWpp()" class="btn-whatsapp">
+            QUERO MEU ENSAIO + PRÉVIA GRÁTIS
+        </button>
+    </div>
 
     <script>
-        function trackWpp(mensagem) {
+        function trackWpp() {
             const numero = "5533998544308";
+            const mensagem = "Olá Rick! Vi os Ensaios IA no site e quero transformar minha foto. Como funciona a prévia gratuita?";
             const url = "https://wa.me/" + numero + "?text=" + encodeURIComponent(mensagem);
             
             if (typeof fbq !== 'undefined') {
@@ -252,24 +212,10 @@
             }
             
             setTimeout(function() { 
-                window.open(url, '_blank'); 
-            }, 400); 
+                window.location.href = url; 
+            }, 300); 
         }
-
-        function createParticles() {
-            const container = document.getElementById('particle-container');
-            if (!container) return;
-            for (let i = 0; i < 15; i++) {
-                const p = document.createElement('div');
-                p.className = 'particle';
-                const size = Math.random() * 3 + 2 + 'px';
-                p.style.width = size; p.style.height = size;
-                p.style.left = Math.random() * 100 + 'vw';
-                p.style.setProperty('--duration', Math.random() * 8 + 4 + 's');
-                container.appendChild(p);
-            }
-        }
-        createParticles();
     </script>
+
 </body>
 </html>
