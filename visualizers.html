@@ -52,7 +52,7 @@
         .hero, footer, .cta-bottom, .wpp-float { position: relative; z-index: 1; }
 
         .container {
-            max-width: 800px; /* Aumentado de 600px para 800px para expandir o conteúdo */
+            max-width: 800px; 
             margin: 0 auto;
             padding: 0 20px;
         }
@@ -91,9 +91,20 @@
             box-shadow: 0 0 30px rgba(255, 0, 0, 0.3);
             margin-bottom: 30px;
             background: #000;
+            position: relative;
+            /* Mantém a proporção 16:9 para o iframe */
+            padding-bottom: 56.25%; 
+            height: 0;
         }
 
-        video { width: 100%; display: block; }
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
 
         .price-box {
             background: var(--surface);
@@ -162,11 +173,11 @@
         .comparison-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 15px; /* Aumentado levemente para melhor respiro */
+            gap: 15px;
             margin-bottom: 40px;
         }
 
-        .comparison-grid img, .comparison-grid video { 
+        .comparison-grid img { 
             width: 100%; 
             border-radius: 10px; 
             border: 1px solid #222; 
@@ -174,10 +185,9 @@
 
         .label { font-size: 0.7rem; color: var(--text-gray); text-transform: uppercase; margin-top: 5px; display: block;}
 
-        /* GRADE DE VÍDEOS EM LOOP (AJUSTADO PARA 2 COLUNAS PARA MAIOR TAMANHO) */
         .gif-grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr); /* Mudado de 3 para 2 para aumentar os itens */
+            grid-template-columns: repeat(2, 1fr);
             gap: 15px;
             margin: 30px 0 50px;
         }
@@ -234,15 +244,9 @@
             animation: pulse-green 2s infinite;
         }
 
-        @keyframes pulse-green {
-            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
-            70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
-        }
-
         @media (max-width: 600px) {
             h1 { font-size: 2.2rem; }
-            .gif-grid { grid-template-columns: 1fr; } /* No celular ocupam a largura total */
+            .gif-grid { grid-template-columns: 1fr; }
             .comparison-grid { gap: 10px; }
         }
     </style>
@@ -256,10 +260,14 @@
             <h1>Visualizer<br><span style="color:var(--accent-red)">Impactante</span></h1>
             <span class="badge-ia">Fiel ao seu rosto</span>
             
+            <!-- VIDEO WRAPPER CORRIGIDO -->
             <div class="video-wrapper">
-                <video controls poster="thumb-video.png">
-                    <source src="exemplo-visualizer.mp4" type="video/mp4">
-                </video>
+                <iframe 
+                    src="https://www.youtube.com/embed/e4g5CHdU3Bs?rel=0&modestbranding=1" 
+                    title="Visualizer Premium" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    allowfullscreen>
+                </iframe>
             </div>
 
             <div class="price-box">
@@ -299,7 +307,6 @@
             </div>
 
             <div class="comparison-title">Diferentes Estilos e Vibes</div>
-            <!-- VÍDEOS EM LOOP EM GRID MAIOR -->
             <div class="gif-grid">
                 <video autoplay loop muted playsinline>
                     <source src="loop1.mp4" type="video/mp4">
@@ -310,10 +317,9 @@
                 <video autoplay loop muted playsinline>
                     <source src="loop3.mp4" type="video/mp4">
                 </video>
-				<video autoplay loop muted playsinline>
+                <video autoplay loop muted playsinline>
                     <source src="loop4.mp4" type="video/mp4">
                 </video>
-                <!-- Dica: adicionei um 4º vídeo ou deixe 3, o layout ajustará automaticamente -->
             </div>
 
             <div class="info-section">
