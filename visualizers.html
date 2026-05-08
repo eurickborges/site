@@ -109,39 +109,11 @@
             border: 0;
         }
 
-        .price-box {
-            background: var(--surface);
-            border: 1px solid #333;
-            padding: 30px 20px;
-            border-radius: 15px;
-            margin-bottom: 40px;
-            text-align: center;
+        /* Estilo do Botão Centralizado após remover o preço */
+        .cta-center-wrapper {
+            margin: 20px 0 40px;
             display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .price-value {
-            font-size: 3.5rem;
-            font-weight: 900;
-            display: block;
-            margin: 5px 0;
-            line-height: 1;
-        }
-
-        .payment-methods {
-            font-size: 0.8rem;
-            color: var(--text-gray);
-            margin-bottom: 20px;
-            display: flex;
-            gap: 15px;
             justify-content: center;
-            align-items: center;
-        }
-
-        .payment-methods i { 
-            color: var(--wpp-color); 
-            margin-right: 4px; 
         }
 
         @keyframes pulse-btn {
@@ -300,26 +272,11 @@
         }
 
         @media (max-width: 600px) {
-            h1 { 
-                font-size: 2.2rem; 
-            }
-
-            .gif-grid { 
-                grid-template-columns: 1fr; 
-            }
-
-            .comparison-grid { 
-                gap: 10px; 
-            }
-
-            .cinematic-grid {
-                grid-template-columns: 1fr;
-                gap: 18px;
-            }
-
-            .cinematic-grid img {
-                height: 300px;
-            }
+            h1 { font-size: 2.2rem; }
+            .gif-grid { grid-template-columns: 1fr; }
+            .comparison-grid { gap: 10px; }
+            .cinematic-grid { grid-template-columns: 1fr; gap: 18px; }
+            .cinematic-grid img { height: 300px; }
         }
     </style>
 </head>
@@ -341,15 +298,8 @@
                 </iframe>
             </div>
 
-            <div class="price-box">
-                <span style="font-size: 0.8rem; color: var(--text-gray); text-transform: uppercase; letter-spacing: 1px;">Apenas hoje por</span>
-                <span class="price-value">R$ 69</span>
-                
-                <div class="payment-methods">
-                    <span><i class="fa-solid fa-bolt"></i> Pix</span>
-                    <span><i class="fa-solid fa-credit-card"></i> Até 12x no Cartão</span>
-                </div>
-
+            <!-- Botão de CTA sem o quadro de preço -->
+            <div class="cta-center-wrapper">
                 <a href="javascript:void(0)" onclick="trackWpp()" class="btn-fast-buy">
                     <i class="fab fa-whatsapp"></i> Garantir meu Visualizer
                 </a>
@@ -432,6 +382,7 @@
     </a>
 
     <script>
+        // ... (Código do canvas permanece o mesmo) ...
         const canvas = document.getElementById('particle-canvas');
         const ctx = canvas.getContext('2d');
         canvas.width = window.innerWidth;
@@ -447,7 +398,6 @@
                 this.size = size; 
                 this.color = color;
             }
-
             draw() {
                 ctx.beginPath();
                 ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2, false);
@@ -456,7 +406,6 @@
                 ctx.shadowColor = "red";
                 ctx.fill();
             }
-
             update() {
                 if (this.x > canvas.width || this.x < 0) this.directionX = -this.directionX;
                 if (this.y < 0) this.y = canvas.height;
@@ -469,7 +418,6 @@
         function init() {
             particlesArray = [];
             let numberOfParticles = (canvas.height * canvas.width) / 9000;
-
             for (let i = 0; i < numberOfParticles; i++) {
                 let size = (Math.random() * 3) + 1;
                 let x = (Math.random() * ((innerWidth - size * 2) - (size * 2)) + size * 2);
@@ -483,7 +431,6 @@
         function animate() {
             requestAnimationFrame(animate);
             ctx.clearRect(0, 0, innerWidth, innerHeight);
-
             for (let i = 0; i < particlesArray.length; i++) {
                 particlesArray[i].update();
             }
@@ -498,13 +445,15 @@
         init(); 
         animate();
 
+        // FUNÇÃO ATUALIZADA - SEM PREÇO NA MENSAGEM
         function trackWpp() {
             const numero = "5533998544308";
-            const msg = "Olá Rick! Vi o Visualizer de R$69 no site e tenho interesse.";
+            // Nova mensagem sem o valor de R$69
+            const msg = "Olá Rick! Vi os seus Visualizers no site e tenho interesse em fazer um.";
             const url = "https://wa.me/" + numero + "?text=" + encodeURIComponent(msg);
 
             if (typeof fbq !== 'undefined') {
-                fbq('track', 'AddToCart');
+                fbq('track', 'Contact'); // Mudei para Contact já que não é venda direta com preço agora
             }
 
             setTimeout(() => { 
